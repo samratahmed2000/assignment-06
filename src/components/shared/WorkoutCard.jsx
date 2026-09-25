@@ -16,7 +16,7 @@ const WorkoutCard = ({ workout }) => {
   } = workout;
 
   return (
-    <Link href={`workout/${workout.id}`}>
+    <Link href={`/workout-details/${workout.id}`}>
       <div className="flex flex-col w-full gap-6 rounded-2xl bg-[#15171D]">
         <div className="flex flex-col justify-center items-center relative aspect-3/2 w-full overflow-hidden rounded-t-2xl">
           <Image

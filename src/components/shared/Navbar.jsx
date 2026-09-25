@@ -6,7 +6,7 @@ import NavBadge from "../button/NavBadge";
 
 const Navbar = () => {
   return (
-    <nav className="border-b border-[#222630] py-6">
+    <nav className="border-b border-[#222630] py-6 sticky top-0 backdrop-blur-2xl z-50">
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/" className="flex items-center gap-2">
           <Image src={logo} alt="logo" />

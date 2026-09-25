@@ -14,7 +14,7 @@ const WorkoutLibrary = async () => {
   const workouts = await getWorkouts();
 
   return (
-    <section className="container mx-auto">
+    <section className="container mx-auto" id="workouts">
       <h2 className="font-oswald text-[30px] font-bold">THE LIBRARY</h2>
       <p className="text-[14px] font-normal text-[#9CA3AF] mb-8">
         Twelve lifts covering every major muscle group.

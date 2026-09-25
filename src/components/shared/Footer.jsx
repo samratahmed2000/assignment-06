@@ -9,7 +9,13 @@ const Footer = () => {
       <div className="container mx-auto flex justify-between items-center">
         <div>
           <Link href="/" className="flex items-center gap-2">
-            <Image src={footerLogo} alt="footer logo" className="w-4 h-3" />
+            <Image
+              src={footerLogo}
+              alt="footer logo"
+              width={80}
+              height={80}
+              className="w-4 h-3"
+            />
             <span className="font-oswald font-bold text-[18px]">FITLOG</span>
           </Link>
         </div>

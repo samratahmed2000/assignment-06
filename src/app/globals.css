@@ -5,3 +5,17 @@
   --font-inter: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-oswald: var(--font-oswald), sans-serif;
 }
+
+@layer utilities {
+  .para {
+    @apply text-[#9CA3AF] text-[12px] font-bold mx-3;
+  }
+
+  .para-span {
+    @apply text-[#E5E7EB] text-[14px] font-medium mx-3;
+  }
+
+  .div-flex {
+    @apply flex justify-between items-center p-3 border border-[#232834];
+  }
+}
