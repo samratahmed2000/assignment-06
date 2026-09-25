@@ -8,9 +8,7 @@ export default function NotFound() {
         aria-hidden="true"
       />
       <div className="text-center max-w-xl z-10">
-        <p className="text-base font-semibold uppercase">
-          404 Error
-        </p>
+        <p className="text-base font-semibold uppercase">404 Error</p>
         <h1 className="mt-4 text-2xl text-red-600/90 font-bold tracking-tight sm:text-7xl">
           Page Not Found
         </h1>
