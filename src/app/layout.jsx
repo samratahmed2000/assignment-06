@@ -1,6 +1,7 @@
 import Navbar from "@/components/shared/Navbar";
 import { Inter, Oswald } from "next/font/google";
 import "./globals.css";
+import Footer from "@/components/shared/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
       <body className={`${inter.className} bg-[#0C0D10]`}>
         <Navbar />
         <main> {children}</main>
+        <Footer />
       </body>
     </html>
   );
