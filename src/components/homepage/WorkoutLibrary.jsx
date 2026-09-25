@@ -16,13 +16,15 @@ const WorkoutLibrary = async () => {
   return (
     <section className="container mx-auto">
       <h2 className="font-oswald text-[30px] font-bold">THE LIBRARY</h2>
-      <p className="text-[14px] font-normal text-[#9CA3AF]">
+      <p className="text-[14px] font-normal text-[#9CA3AF] mb-8">
         Twelve lifts covering every major muscle group.
       </p>
 
-      {workouts.map((workout) => {
-        return <WorkoutCard key={workout.id} workout={workout} />;
-      })}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
+        {workouts.map((workout) => {
+          return <WorkoutCard key={workout.id} workout={workout} />;
+        })}
+      </div>
     </section>
   );
 };

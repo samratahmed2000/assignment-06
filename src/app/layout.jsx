@@ -15,7 +15,7 @@ const oswald = Oswald({
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${oswald.variable}`}>
-      <body className={`${inter.className} bg-black`}>
+      <body className={`${inter.className} bg-[#0C0D10]`}>
         <Navbar />
         <main> {children}</main>
       </body>
