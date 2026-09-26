@@ -6,8 +6,8 @@ import BrowseWorkout from "../button/BrowseWorkout";
 const Banner = () => {
   return (
     <header className="container mx-auto">
-      <div className="flex justify-between min-h-80 my-12 p-12 items-center rounded-2xl bg-[#222630]">
-        <div>
+      <div className="flex flex-col lg:flex-row justify-between min-h-80 my-12 p-12 items-center rounded-2xl bg-[#222630]">
+        <div className="flex flex-col items-center lg:items-start">
           <span className="text-[#C2F800] text-[11px] font-bold">
             WORKOUT LIBRARY
           </span>

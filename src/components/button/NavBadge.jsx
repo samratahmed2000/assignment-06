@@ -15,9 +15,6 @@ const NavBadge = () => {
   const todayCount = addToday.length;
   const savedCount = saved.length;
 
-  const currentWorkouts = activeTab === "today" ? addToday : saved;
-  const totalExercises = currentWorkouts.length;
-
   return (
     <div className="flex gap-6">
       <Link

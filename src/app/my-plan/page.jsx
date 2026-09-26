@@ -162,7 +162,7 @@ const MyPlanPage = () => {
                     </p>
 
                     <Link href={`/workout-details`}>
-                      <button className="text-[12px] font-semibold text-black bg-[#C2F10D] px-6 py-3 rounded-2xl">
+                      <button className="text-[12px] font-semibold text-black bg-[#C2F10D] px-6 py-3 rounded-2xl hover:text-[#E5E7EB] hover:bg-[#0F1115] hover:border hover:border-[#E5E7EB] hover:cursor-pointer">
                         Go to workouts
                       </button>
                     </Link>

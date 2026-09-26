@@ -27,7 +27,7 @@ const AddToTodayButton = ({ workout }) => {
   return (
     <button
       onClick={() => handleAddToToday()}
-      className={`bg-[#CCFF00] text-[14px] text-[#0F1115] font-semibold px-5 py-3 flex justify-between items-center gap-2 rounded-2xl`}
+      className={`bg-[#CCFF00] text-[14px] text-[#0F1115] font-semibold px-5 py-3 flex justify-between items-center gap-2 rounded-2xl hover:text-[#E5E7EB] hover:bg-[#0F1115] hover:border hover:border-[#E5E7EB] hover:cursor-pointer`}
     >
       <LuCalendarPlus2 /> Add to today&apos;s plan
     </button>

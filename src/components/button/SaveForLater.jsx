@@ -28,7 +28,7 @@ const SaveForLaterButton = ({ workout }) => {
   return (
     <button
       onClick={() => handleSaveForLater()}
-      className="text-[14px] text-[#E5E7EB] font-medium border border-[#374151] px-5 py-3 flex justify-between items-center gap-2 rounded-2xl"
+      className="text-[14px] text-[#E5E7EB] font-medium border border-[#374151] px-5 py-3 flex justify-between items-center gap-2 rounded-2xl hover:cursor-pointer hover:border-[#E5E7EB]"
     >
       <FaRegBookmark /> Save for later
     </button>

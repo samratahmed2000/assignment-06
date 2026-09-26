@@ -27,7 +27,7 @@ const RemovedButton = ({ workout, type }) => {
     <div>
       <button
         onClick={() => handleRemove()}
-        className="text-[#6B7280] font-extrabold"
+        className="text-[#6B7280] text-2xl font-extrabold hover:text-red-600 hover:cursor-pointer"
       >
         <RxCross1 />
       </button>
