@@ -16,7 +16,9 @@ const Footer = () => {
               height={80}
               className="w-4 h-3"
             />
-            <span className="font-oswald font-bold text-[18px]">FITLOG</span>
+            <span className="font-oswald font-bold text-[18px] text-white">
+              FITLOG
+            </span>
           </Link>
         </div>
 

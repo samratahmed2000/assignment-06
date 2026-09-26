@@ -8,11 +8,15 @@ const WorkoutProvider = ({ children }) => {
   const [addToday, setAddToday] = useState([]);
   const [saved, setSaved] = useState([]);
 
+  const [activeTab, setActiveTab] = useState("today");
+
   const sharedData = {
     addToday,
     setAddToday,
     saved,
     setSaved,
+    activeTab,
+    setActiveTab,
   };
 
   return (

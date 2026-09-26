@@ -2,7 +2,6 @@ import AddToTodayButton from "@/components/button/AddToToday";
 import SaveForLaterButton from "@/components/button/SaveForLater";
 import Image from "next/image";
 import React from "react";
-import Loading from "./loading";
 
 const getWorkouts = async () => {
   try {
@@ -22,8 +21,10 @@ const WorkoutDetailsPage = async ({ params }) => {
 
   if (!workout) {
     return (
-      <div className="flex justify-center items-center h-screen text-white text-xl">
-        <h2>Workout not found! Please check the ID.</h2>
+      <div className="flex justify-center items-center h-screen">
+        <h2 className="text-white text-xl">
+          Workout not found! Please check the ID.
+        </h2>
       </div>
     );
   }
@@ -41,7 +42,7 @@ const WorkoutDetailsPage = async ({ params }) => {
       </div>
 
       <div>
-        <h2 className="font-oswald font-bold text-[36px] uppercase">
+        <h2 className="font-oswald font-bold text-[36px] uppercase text-white">
           {workout.name}
         </h2>
         <p className="text-[16px] text-[#9CA3AF] font-normal leading-6 my-3">
@@ -97,7 +98,9 @@ const WorkoutDetailsPage = async ({ params }) => {
         </div>
 
         <div className="my-6">
-          <span className="text-[16px] font-extrabold">INSTRUCTIONS</span>
+          <span className="text-[16px] text-white font-extrabold">
+            INSTRUCTIONS
+          </span>
           {workout.instructions.map((instructions, ind) => (
             <p
               key={instructions}

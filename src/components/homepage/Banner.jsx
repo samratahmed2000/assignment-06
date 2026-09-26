@@ -11,7 +11,7 @@ const Banner = () => {
           <span className="text-[#C2F800] text-[11px] font-bold">
             WORKOUT LIBRARY
           </span>
-          <h1 className="font-oswald text-[60px] my-4 font-extrabold leading-none">
+          <h1 className="font-oswald text-[60px] my-4 font-extrabold leading-none text-white">
             TRAIN WITH INTENT. LOG <br />
             EVERY SET.
           </h1>

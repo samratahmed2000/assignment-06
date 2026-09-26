@@ -40,7 +40,7 @@ const WorkoutCard = ({ workout }) => {
             ))}
           </div>
 
-          <h2 className="font-oswald font-bold text-[18px] uppercase py-2 mt-2">
+          <h2 className="font-oswald font-bold text-[18px] uppercase py-2 mt-2 text-white">
             {name}
           </h2>
           <p className="text-[#9CA3AF] text-[12px] font-normal">{equipment}</p>

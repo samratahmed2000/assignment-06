@@ -1,4 +1,3 @@
-import Banner from "@/components/homepage/Banner";
 import WorkoutLibrary from "@/components/homepage/WorkoutLibrary";
 import React from "react";
 
