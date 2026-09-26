@@ -31,26 +31,117 @@ const WorkoutDetailsPage = async ({ params }) => {
   }
 
   return (
-    <div className="flex gap-12 container mx-auto py-6 mt-8 mb-18">
-      <div className="pt-2">
-        <Image
-          src={workout?.image}
-          alt={workout?.name}
-          width={590}
-          height={770}
-          className="rounded-2xl h-full w-fit"
-        />
+    // <div className="flex gap-12 container mx-auto py-6 mt-8 mb-18">
+    //   <div className="pt-2">
+    //     <Image
+    //       src={workout?.image}
+    //       alt={workout?.name}
+    //       width={700}
+    //       height={700}
+    //       className="rounded-2xl h-full w-fit"
+    //     />
+    //   </div>
+
+    //   <div>
+    //     <h2 className="font-oswald font-bold text-[36px] uppercase text-white">
+    //       {workout.name}
+    //     </h2>
+    //     <p className="text-[16px] text-[#9CA3AF] font-normal leading-6 my-3">
+    //       {workout.description}
+    //     </p>
+
+    //     <div className="flex gap-2 items-center">
+    //       {workout.muscleGroups.map((muscle) => (
+    //         <span
+    //           key={muscle}
+    //           className="bg-[#ccff00] text-black text-[11px] font-extrabold uppercase px-2.5 py-1 rounded-full tracking-wider"
+    //         >
+    //           {muscle}
+    //         </span>
+    //       ))}
+    //     </div>
+
+    //     <div className="bg-[#151922] rounded-2xl my-6">
+    //       <div className="div-flex rounded-t-2xl">
+    //         <p className="para">EQUIPMENT</p>
+    //         <span className="para-span">{workout.equipment}</span>
+    //       </div>
+
+    //       <div className="div-flex">
+    //         <p className="para">DIFFICULTY</p>
+    //         <span className="para-span">{workout.difficulty}</span>
+    //       </div>
+
+    //       <div className="div-flex">
+    //         <p className="para">SETS</p>
+    //         <span className="para-span">{workout.sets}</span>
+    //       </div>
+
+    //       <div className="div-flex">
+    //         <p className="para">REPS</p>
+    //         <span className="para-span">{workout.reps}</span>
+    //       </div>
+
+    //       <div className="div-flex">
+    //         <p className="para">DURATION</p>
+    //         <span className="para-span">{workout.duration} min</span>
+    //       </div>
+
+    //       <div className="div-flex">
+    //         <p className="para">CALORIES</p>
+    //         <span className="para-span">{workout.caloriesBurned} kcal</span>
+    //       </div>
+
+    //       <div className="div-flex rounded-b-2xl">
+    //         <p className="para">RATING</p>
+    //         <span className="para-span">{workout.rating}</span>
+    //       </div>
+    //     </div>
+
+    //     <div className="my-6">
+    //       <span className="text-[16px] text-white font-extrabold">
+    //         INSTRUCTIONS
+    //       </span>
+    //       {workout.instructions.map((instructions, ind) => (
+    //         <p
+    //           key={instructions}
+    //           className="text-[#D1D5DB] text-[14px] font-normal leading-8 tracking-wide"
+    //         >
+    //           {ind + 1}. {instructions}
+    //         </p>
+    //       ))}
+    //     </div>
+
+    //     <div className="flex gap-6 items-center">
+    //       <AddToTodayButton workout={workout} />
+    //       <SaveForLaterButton workout={workout} />
+    //     </div>
+    //   </div>
+    // </div>
+
+    <div className="container mx-auto px-4 py-6 mt-8 mb-18 flex flex-col lg:flex-row gap-8 lg:gap-12">
+      <div className="w-full lg:w-1/2 flex justify-center items-start">
+        <div className="relative w-full aspect-square max-w-175">
+          <Image
+            src={workout?.image}
+            alt={workout?.name}
+            fill
+            sizes="(max-width: 1024px) 100vw, 700px"
+            className="rounded-2xl object-cover"
+            priority
+          />
+        </div>
       </div>
 
-      <div>
-        <h2 className="font-oswald font-bold text-[36px] uppercase text-white">
+      <div className="w-full lg:w-1/2">
+        <h2 className="font-oswald font-bold text-[28px] md:text-[36px] uppercase text-white leading-tight">
           {workout.name}
         </h2>
         <p className="text-[16px] text-[#9CA3AF] font-normal leading-6 my-3">
           {workout.description}
         </p>
 
-        <div className="flex gap-2 items-center">
+        <div className="flex flex-wrap gap-2 items-center">
           {workout.muscleGroups.map((muscle) => (
             <span
               key={muscle}
@@ -66,32 +157,26 @@ const WorkoutDetailsPage = async ({ params }) => {
             <p className="para">EQUIPMENT</p>
             <span className="para-span">{workout.equipment}</span>
           </div>
-
           <div className="div-flex">
             <p className="para">DIFFICULTY</p>
             <span className="para-span">{workout.difficulty}</span>
           </div>
-
           <div className="div-flex">
             <p className="para">SETS</p>
             <span className="para-span">{workout.sets}</span>
           </div>
-
           <div className="div-flex">
             <p className="para">REPS</p>
             <span className="para-span">{workout.reps}</span>
           </div>
-
           <div className="div-flex">
             <p className="para">DURATION</p>
             <span className="para-span">{workout.duration} min</span>
           </div>
-
           <div className="div-flex">
             <p className="para">CALORIES</p>
             <span className="para-span">{workout.caloriesBurned} kcal</span>
           </div>
-
           <div className="div-flex rounded-b-2xl">
             <p className="para">RATING</p>
             <span className="para-span">{workout.rating}</span>
@@ -99,20 +184,20 @@ const WorkoutDetailsPage = async ({ params }) => {
         </div>
 
         <div className="my-6">
-          <span className="text-[16px] text-white font-extrabold">
+          <span className="text-[16px] text-white font-extrabold block mb-2">
             INSTRUCTIONS
           </span>
           {workout.instructions.map((instructions, ind) => (
             <p
               key={instructions}
-              className="text-[#D1D5DB] text-[14px] font-normal leading-8 tracking-wide"
+              className="text-[#D1D5DB] text-[14px] font-normal leading-7 tracking-wide mb-2"
             >
               {ind + 1}. {instructions}
             </p>
           ))}
         </div>
 
-        <div className="flex gap-6 items-center">
+        <div className="flex flex-wrap gap-4 items-center">
           <AddToTodayButton workout={workout} />
           <SaveForLaterButton workout={workout} />
         </div>

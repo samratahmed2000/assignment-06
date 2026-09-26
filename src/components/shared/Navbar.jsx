@@ -4,6 +4,7 @@ import logo from "@/assets/logo.png";
 import Image from "next/image";
 import NavBadge from "../button/NavBadge";
 import { GiHamburgerMenu } from "react-icons/gi";
+import NavLink from "../button/NavLink";
 
 const Navbar = () => {
   return (
@@ -19,10 +20,10 @@ const Navbar = () => {
         <div>
           <ul className="hidden md:flex items-center gap-4 text-[12px] font-semibold">
             <li>
-              <Link href="/">Workout</Link>
+              <NavLink href="/">Workout</NavLink>
             </li>
             <li>
-              <Link href="/my-plan">My Plan</Link>
+              <NavLink href="/my-plan">My Plan</NavLink>
             </li>
           </ul>
         </div>

@@ -17,7 +17,7 @@ const WorkoutCard = ({ workout }) => {
 
   return (
     <Link href={`/workout-details/${workout.id}`}>
-      <div className="flex flex-col w-full gap-6 rounded-2xl bg-[#15171D]">
+      <div className="flex flex-col w-full gap-6 rounded-2xl bg-[#15171D] hover:cursor-pointer hover:border hover:border-[#C2F800]">
         <div className="flex flex-col justify-center items-center relative aspect-3/2 w-full overflow-hidden rounded-t-2xl">
           <Image
             src={image}
