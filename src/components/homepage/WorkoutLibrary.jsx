@@ -3,7 +3,9 @@ import WorkoutCard from "../shared/WorkoutCard";
 
 const getWorkouts = async () => {
   try {
-    const res = await fetch("https://api.abcz.workers.dev/api/fitlog");
+    const res = await fetch("https://api.abcz.workers.dev/api/fitlog", {
+      next: { revalidate: 300 },
+    });
     return res.json();
   } catch (error) {
     throw new Error("Data not found");

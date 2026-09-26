@@ -4,11 +4,36 @@ import AddTodayCard from "@/components/shared/AddTodayCard";
 import SavedCard from "@/components/shared/SavedCard";
 import { WorkoutsContext } from "@/context/WorkoutsContext";
 import Link from "next/link";
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 
 const MyPlanPage = () => {
-  const { addToday, saved, activeTab, setActiveTab } =
-    useContext(WorkoutsContext);
+  const {
+    addToday = [],
+    saved = [],
+    activeTab,
+    setActiveTab,
+  } = useContext(WorkoutsContext);
+
+  const [sortBy, setSortby] = useState("duration");
+
+  const sortWorkout = (workoutList) => {
+    if (!workoutList || !Array.isArray(workoutList)) return [];
+
+    const sortedWorkout = [...workoutList];
+
+    if (sortBy === "duration") {
+      sortedWorkout.sort((a, b) => b.duration - a.duration);
+    } else if (sortBy === "calories") {
+      sortedWorkout.sort((a, b) => b.calories - a.calories);
+    } else if (sortBy === "rating") {
+      sortedWorkout.sort((a, b) => b.rating - a.rating);
+    }
+
+    return sortedWorkout;
+  };
+
+  const addTodayWorkouts = sortWorkout(addToday);
+  const savedWorkout = sortWorkout(saved);
 
   return (
     <section className="container mx-auto py-6 mt-8">
@@ -28,15 +53,19 @@ const MyPlanPage = () => {
           <p>Calories</p>
         </div>
 
-        <div className="flex gap-3 items-center">
+        <div className="flex gap-3 items-center justify-end py-4">
           <span className="text-[#8A92A0] text-[12px] font-normal ">
             Sort By
           </span>
-          <select className="select appearance-none bg-[#13161D] text-white">
+          <select
+            value={sortBy}
+            onChange={(e) => setSortby(e.target.value)}
+            className="select w-fit min-h-0 appearance-none bg-[#13161D] text-[12px font-normal] text-white"
+          >
             <option disabled={true}>Pick a color</option>
-            <option>Crimson</option>
-            <option>Amber</option>
-            <option>Velvet</option>
+            <option value={"duration"}>Duration</option>
+            <option value={"calories"}>Calories</option>
+            <option value={"rating"}>Rating</option>
           </select>
         </div>
 
@@ -52,8 +81,8 @@ const MyPlanPage = () => {
             />
             <div className="tab-content bg-[#13161D] border border-[#232732] p-18">
               {activeTab === "today" &&
-                (addToday.length > 0 ? (
-                  addToday.map((workout) => {
+                (addTodayWorkouts.length > 0 ? (
+                  addTodayWorkouts.map((workout) => {
                     return (
                       <AddTodayCard
                         key={workout.id}
@@ -88,8 +117,8 @@ const MyPlanPage = () => {
             />
             <div className="tab-content bg-[#13161D] border-[#232732] p-18">
               {activeTab === "saved" &&
-                (saved.length > 0 ? (
-                  saved.map((workout) => {
+                (savedWorkout.length > 0 ? (
+                  savedWorkout.map((workout) => {
                     return (
                       <SavedCard key={workout.id} workout={workout}></SavedCard>
                     );
