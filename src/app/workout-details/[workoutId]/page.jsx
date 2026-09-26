@@ -3,12 +3,9 @@ import SaveForLaterButton from "@/components/button/SaveForLater";
 import Image from "next/image";
 import React from "react";
 
-const getWorkouts = async ({ workout }) => {
+const getWorkouts = async () => {
   try {
-    const res = await fetch(
-      `https://api.abcz.workers.dev/api/fitlog/${workout.id}`,
-      { next: { revalidate: 300 } },
-    );
+    const res = await fetch(`https://api.abcz.workers.dev/api/fitlog`);
     return res.json();
   } catch (error) {
     throw new Error("Data not found");

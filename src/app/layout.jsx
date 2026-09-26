@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
           <main>{children}</main>
           <Footer />
           <Analytics />
-          <ToastContainer />
+          <ToastContainer position="bottom-right" />
         </WorkoutProvider>
       </body>
     </html>

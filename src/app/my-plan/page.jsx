@@ -35,6 +35,20 @@ const MyPlanPage = () => {
   const addTodayWorkouts = sortWorkout(addToday);
   const savedWorkout = sortWorkout(saved);
 
+  const currentWorkouts = activeTab === "today" ? addToday : saved;
+
+  const totalExercises = currentWorkouts.length;
+
+  const totalMinutes = currentWorkouts.reduce(
+    (sum, item) => sum + (Number(item.duration) || 0),
+    0,
+  );
+
+  const totalCalories = currentWorkouts.reduce(
+    (sum, item) => sum + (Number(item.caloriesBurned) || 0),
+    0,
+  );
+
   return (
     <section className="container mx-auto py-6 mt-8">
       <div>
@@ -46,11 +60,26 @@ const MyPlanPage = () => {
         </p>
 
         <div className="text-[#8A92A0] text-[12px] font-normal flex justify-between items-center py-12 px-6 border border-[#232732] rounded-2xl bg-[#13161D]">
-          <p>Exercises</p>
+          <div className="flex flex-col">
+            <p>Exercises</p>
+            <span className="text-[36px] font-bold font-oswald text-[#CCFF00]">
+              {totalExercises}
+            </span>
+          </div>
 
-          <p>Minutes</p>
+          <div className="flex flex-col">
+            <p>Minutes</p>
+            <span className="text-[36px] font-bold font-oswald text-white">
+              {totalMinutes}
+            </span>
+          </div>
 
-          <p>Calories</p>
+          <div className="flex flex-col">
+            <p>Calories</p>
+            <span className="text-[36px] font-bold font-oswald text-white">
+              {totalCalories}
+            </span>
+          </div>
         </div>
 
         <div className="flex gap-3 items-center justify-end py-4">
