@@ -82,12 +82,12 @@ const WorkoutDetailsPage = async ({ params }) => {
 
           <div className="div-flex">
             <p className="para">DURATION</p>
-            <span className="para-span">{workout.duration}</span>
+            <span className="para-span">{workout.duration} min</span>
           </div>
 
           <div className="div-flex">
             <p className="para">CALORIES</p>
-            <span className="para-span">{workout.caloriesBurned}</span>
+            <span className="para-span">{workout.caloriesBurned} kcal</span>
           </div>
 
           <div className="div-flex rounded-b-2xl">
@@ -109,8 +109,8 @@ const WorkoutDetailsPage = async ({ params }) => {
         </div>
 
         <div className="flex gap-6 items-center">
-          <AddToTodayButton />
-          <SaveForLaterButton />
+          <AddToTodayButton workout={workout} />
+          <SaveForLaterButton workout={workout} />
         </div>
       </div>
     </div>
